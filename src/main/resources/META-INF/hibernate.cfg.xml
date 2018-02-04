@@ -27,8 +27,8 @@
 		<property name="c3p0.max_statement">50</property>
 
 
-		<mapping class="com.obs.POJO.User"></mapping>
-		<mapping class="com.obs.POJO.Book"></mapping>
+		<mapping class="com.obs.Entities.User"></mapping>
+		<mapping class="com.obs.Entities.Book"></mapping>
 		
 
 	</session-factory>
