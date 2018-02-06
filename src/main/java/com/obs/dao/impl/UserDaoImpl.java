@@ -14,12 +14,12 @@ import java.util.List;
 public class UserDaoImpl implements UserDao{
 
     @Autowired
-    SessionFactory sessionFactory;
+    private SessionFactory sessionFactory;
 
-    @Override
-    public List<User> listAllUsers() {
-        return sessionFactory.getCurrentSession().createQuery("from tb_USER").list();
-    }
+//    @Override
+//    public List listAllUsers() {
+//        return sessionFactory.getCurrentSession().createQuery("from tb_USER").list();
+//    }
 
     @Override
     public boolean deleteUser(User user) {
@@ -36,5 +36,10 @@ public class UserDaoImpl implements UserDao{
     public boolean saveOrUpdateUser(User user) {
         sessionFactory.getCurrentSession().saveOrUpdate(user);
         return true;
+    }
+
+    @Override
+    public User getUser(String userId) {
+        return (User) sessionFactory.getCurrentSession().get(User.class,userId);
     }
 }

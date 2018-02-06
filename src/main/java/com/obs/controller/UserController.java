@@ -8,6 +8,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import utils.WebUtils;
+
+import java.util.Map;
 
 @Controller
 @RequestMapping(value = "users")
@@ -20,14 +23,13 @@ public class UserController {
     public ModelAndView registerUser(User user){
         ModelAndView mv = new ModelAndView("message");
         try{
+            user.setId(WebUtils.makeID());
             userService.saveOrUpdateUser(user);
             mv.addObject("msg","registration successful!");
         }catch(Exception e){
             e.printStackTrace();
             mv.addObject("msg","registration fail!");
-
         }
         return mv;
     }
-
 }

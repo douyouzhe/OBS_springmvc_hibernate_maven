@@ -5,19 +5,21 @@ import com.obs.dao.UserDao;
 import com.obs.services.UserServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
+@Transactional
 public class UserServicesImpl implements UserServices{
 
     @Autowired
-    UserDao userDao;
+    private UserDao userDao;
 
-    @Override
-    public List<User> listAllUsers() {
-        return userDao.listAllUsers();
-    }
+//    @Override
+//    public List<User> listAllUsers() {
+//        return userDao.listAllUsers();
+//    }
 
     @Override
     public boolean deleteUser(User user) {
@@ -27,5 +29,10 @@ public class UserServicesImpl implements UserServices{
     @Override
     public boolean saveOrUpdateUser(User user) {
         return userDao.saveOrUpdateUser(user);
+    }
+
+    @Override
+    public User getUser(String userId) {
+        return userDao.getUser(userId);
     }
 }

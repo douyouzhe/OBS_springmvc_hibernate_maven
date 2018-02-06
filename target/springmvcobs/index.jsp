@@ -24,7 +24,7 @@
 </head>
 
 <body style = "text-align:center ; margin-top: auto; margin-bottom:auto; color:white; background-color:black">
-<img src="${pageContext.request.contextPath}/images/ONLINEBOOKSTORE.JPG">
+<img src="resources/images/ONLINEBOOKSTORE.JPG">
 <h3>Welcome! login if already a user</h3>
 
 <form action="${pageContext.request.contextPath}/login" method="post">
@@ -37,9 +37,9 @@
         <tr></tr>
         <tr><td>Password：</td><td><input type="password" name="password"></td></tr>
     </table>
-    <input type="image" width="`120px" src="${pageContext.request.contextPath }/icons/login.png" name="action" height="120px" align="center" value="Login" onMouseOver="this.src='${pageContext.request.contextPath }/icons/loginHover.png'" onMouseOut="this.src='${pageContext.request.contextPath }/icons/login.png'">
+    <input type="image" width="`120px" src="resources/icons/login.png" name="action" height="120px" align="center" value="Login" onMouseOver="this.src='resources/icons/loginHover.png'" onMouseOut="this.src='resources/icons/login.png'">
 
-    &nbsp;&nbsp;<a href="${pageContext.request.contextPath }/views/register.jsp" >a new user?</a>
+    &nbsp;&nbsp;<a href="views/register.jsp" >New User?</a>
 </form>
 
 

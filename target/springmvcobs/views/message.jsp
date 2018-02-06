@@ -11,6 +11,8 @@
     <title>Message</title>
 </head>
 <body>
-    {msg}
+    ${msg}
+
+
 </body>
 </html>
