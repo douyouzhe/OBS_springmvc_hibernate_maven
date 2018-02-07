@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import utils.WebUtils;
 
@@ -29,6 +30,22 @@ public class UserController {
         }catch(Exception e){
             e.printStackTrace();
             mv.addObject("msg","registration fail!");
+        }
+        return mv;
+    }
+
+
+    @RequestMapping(value = "login", method = RequestMethod.GET)
+    public ModelAndView loginUser(@RequestParam("username") String username,
+                                  @RequestParam("password") String pwd){
+        ModelAndView mv = new ModelAndView("message");
+        User user = userService.userLogin(username,pwd);
+        if(user!= null){
+            mv.addObject("msg","login successful!");
+        }
+        else{
+            mv.addObject("msg","login fail!");
+
         }
         return mv;
     }

@@ -27,7 +27,7 @@
 <img src="resources/images/ONLINEBOOKSTORE.JPG">
 <h3>Welcome! login if already a user</h3>
 
-<form action="${pageContext.request.contextPath}/login" method="post">
+<form action="${pageContext.request.contextPath}/users/login" method="post">
 
     <table align="center">
         <tr><td>Username：</td><td><input type="text" name="username"></td></tr>

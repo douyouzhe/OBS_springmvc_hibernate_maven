@@ -16,10 +16,10 @@ public class UserServicesImpl implements UserServices{
     @Autowired
     private UserDao userDao;
 
-//    @Override
-//    public List<User> listAllUsers() {
-//        return userDao.listAllUsers();
-//    }
+    @Override
+    public List<User> listAllUsers() {
+        return userDao.listAllUsers();
+    }
 
     @Override
     public boolean deleteUser(User user) {
@@ -34,5 +34,10 @@ public class UserServicesImpl implements UserServices{
     @Override
     public User getUser(String userId) {
         return userDao.getUser(userId);
+    }
+
+    @Override
+    public User userLogin(String username, String pwd) {
+        return userDao.userLogin(username,pwd);
     }
 }
