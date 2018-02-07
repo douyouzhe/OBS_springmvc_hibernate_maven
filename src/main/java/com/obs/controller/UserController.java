@@ -17,7 +17,7 @@ import java.util.Map;
 public class UserController {
 
     @Autowired
-    UserServices userService;
+    private UserServices userService;
 
     @RequestMapping(value = "register", method = RequestMethod.POST)
     public ModelAndView registerUser(User user){

@@ -13,7 +13,7 @@
         </title>
     </head>
     <body style = "text-align:center ; margin-top: auto; margin-bottom:auto; color:white; background-color:black">
-    <img src="/resources/images/ONLINEBOOKSTORE.JPG">
+    <img src="${pageContext.request.contextPath}/resources/images/ONLINEBOOKSTORE.JPG">
 
     <h3>please fill your information to join.</h3>
 
@@ -40,7 +40,7 @@
         </table>
         <br>
         <br>
-        <input type="image" width="`100px" src="/resources/icons/signUp.png" name="action"  height="120px" align="center" value="join" >
+        <input type="image" width="`100px" src="${pageContext.request.contextPath}/resources/icons/signUp.png" name="action"  height="120px" align="center" value="join" >
     </form>
 
 

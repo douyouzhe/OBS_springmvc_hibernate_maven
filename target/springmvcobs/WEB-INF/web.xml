@@ -4,19 +4,46 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
-  <display-name>OBS</display-name>
+  <!-- url is http://localhost:8080/  show default page-->
+  <welcome-file-list>
+    <welcome-file>/index.jsp</welcome-file>
+  </welcome-file-list>
 
+  <!--add spring config to context-->
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>
+      classpath:META-INF/applicationContext.xml
+    </param-value>
+  </context-param>
+
+  <display-name>OBS</display-name>
+  <!-- spring MVC config start-->
   <servlet>
-    <servlet-name>dispatcher</servlet-name>
+    <servlet-name>spring</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <!-- location of spring mvc config file -->
+      <param-value>classpath:META-INF/spring-mvc.xml</param-value>
+    </init-param>
+    <!--start when container starts-->
     <load-on-startup>1</load-on-startup>
   </servlet>
 
   <servlet-mapping>
-    <servlet-name>dispatcher</servlet-name>
+    <servlet-name>spring</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
+  <!-- spring MVC config end-->
 
+
+  <!-- Spring listener -->
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+
+  <!--  filters  -->
   <filter>
     <filter-name>encodingFilter</filter-name>
     <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>

@@ -8,12 +8,14 @@
   <name>springmvcobs Maven Webapp</name>
   <url>http://maven.apache.org</url>
 
+    <!--put all version number together for easier management-->
   <properties>
-    <spring.version>5.0.2.RELEASE</spring.version>
-    <hibernate.version>5.2.12.Final</hibernate.version>
+      <spring.version>5.0.2.RELEASE</spring.version>
+      <hibernate.version>5.2.12.Final</hibernate.version>
   </properties>
 
   <dependencies>
+      <!--unit test-->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -21,40 +23,62 @@
       <scope>test</scope>
     </dependency>
 
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-core</artifactId>
-      <version>5.0.2.RELEASE</version>
-    </dependency>
+      <!-- spring-->
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-beans</artifactId>
+          <version>${spring.version}</version>
+      </dependency>
 
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-context</artifactId>
-      <version>5.0.2.RELEASE</version>
-    </dependency>
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-core</artifactId>
+          <version>${spring.version}</version>
+      </dependency>
 
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-context</artifactId>
+          <version>${spring.version}</version>
+      </dependency>
+
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-orm</artifactId>
+          <version>${spring.version}</version>
+      </dependency>
+
+      <!-- spring web + spring MVC-->
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-web</artifactId>
+          <version>${spring.version}</version>
+      </dependency>
       <dependency>
           <groupId>org.springframework</groupId>
           <artifactId>spring-webmvc</artifactId>
           <version>${spring.version}</version>
       </dependency>
 
-      <dependency>
-          <groupId>org.springframework.data</groupId>
-          <artifactId>spring-data-jpa</artifactId>
-          <version>1.10.1.RELEASE</version>
-      </dependency>
 
+
+      <!-- hibernate and connection pool-->
       <dependency>
           <groupId>org.hibernate</groupId>
-          <artifactId>hibernate-entitymanager</artifactId>
+          <artifactId>hibernate-core</artifactId>
           <version>${hibernate.version}</version>
       </dependency>
 
       <dependency>
-          <groupId>org.hibernate</groupId>
-          <artifactId>hibernate-c3p0</artifactId>
-          <version>${hibernate.version}</version>
+          <groupId>mysql</groupId>
+          <artifactId>mysql-connector-java</artifactId>
+          <version>5.1.44</version>
+      </dependency>
+
+      <dependency>
+          <groupId>c3p0</groupId>
+          <artifactId>c3p0</artifactId>
+          <version>0.9.1.2</version>
       </dependency>
 
       <dependency>
@@ -63,6 +87,8 @@
           <version>0.9.5.2</version>
       </dependency>
 
+
+      <!--others-->
       <dependency>
           <groupId>javax.servlet</groupId>
           <artifactId>jstl</artifactId>
@@ -76,26 +102,15 @@
       </dependency>
 
       <dependency>
-          <groupId>mysql</groupId>
-          <artifactId>mysql-connector-java</artifactId>
-          <version>5.1.44</version>
-      </dependency>
-
-
-      <!-- https://mvnrepository.com/artifact/c3p0/c3p0 -->
-      <dependency>
-          <groupId>c3p0</groupId>
-          <artifactId>c3p0</artifactId>
-          <version>0.9.1.2</version>
-      </dependency>
-
-      <dependency>
           <groupId>org.apache.tomcat</groupId>
           <artifactId>tomcat-dbcp</artifactId>
           <version>7.0.55</version>
       </dependency>
-
-
+      <dependency>
+          <groupId>junit</groupId>
+          <artifactId>junit</artifactId>
+          <version>RELEASE</version>
+      </dependency>
 
   </dependencies>
   <build>
