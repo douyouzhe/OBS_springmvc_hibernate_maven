@@ -42,4 +42,9 @@ public class UserDaoImpl implements UserDao{
     public User getUser(String userId) {
         return (User) sessionFactory.getCurrentSession().get(User.class,userId);
     }
+
+    @Override
+    public User userLogin(String userId, String pwd) {
+        return null;
+    }
 }
